@@ -14,11 +14,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final Button loadFile = (Button) findViewById(R.id.btnLoadFile);
+        final Button captueImage = (Button) findViewById(R.id.btnTakePicture);
 
         loadFile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, LoadFile.class);
+                startActivity(intent);
+            }
+        });
+        captueImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CameraCapture.class);
                 startActivity(intent);
             }
         });
